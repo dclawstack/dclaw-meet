@@ -1,0 +1,5 @@
+apiVersion: v2
+name: dclaw-meet
+description: "DClaw Meet — Transcription, action items & summaries"
+version: 0.1.0
+appVersion: 0.1.0
