@@ -8,3 +8,11 @@
 # Environment
 .env
 .env.local
+
+# SQLite
+*.db
+*.db-journal
+
+# Python virtual env
+.venv/
+venv/

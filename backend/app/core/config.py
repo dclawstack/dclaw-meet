@@ -1,20 +1,17 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
 
 
 class Settings(BaseSettings):
-    app_name: str = "DClaw App"
+    model_config = SettingsConfigDict(env_file=".env", case_sensitive=False)
+    app_name: str = "DClaw Meet"
     app_env: str = "dev"
     debug: bool = True
 
-    database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/dclaw_app"
+    database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/dclaw_meet"
 
     secret_key: str = "change-me-in-production"
     access_token_expire_minutes: int = 60
-
-    class Config:
-        env_file = ".env"
-        case_sensitive = False
 
 
 @lru_cache()

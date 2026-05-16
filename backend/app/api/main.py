@@ -5,6 +5,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.database import init_db
 from app.api.routes import health
+from app.api.v1 import meet
+
+# Import models so Base.metadata includes them
+import app.models.meet  # noqa: F401
 
 
 @asynccontextmanager
@@ -15,7 +19,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title=settings.app_name,
-    version="1.0.0",
+    version="1.2.0",
     lifespan=lifespan,
 )
 
@@ -28,6 +32,4 @@ app.add_middleware(
 )
 
 app.include_router(health.router, prefix="/health", tags=["health"])
-# TODO: Wire v1 routers here after creating them
-# from app.api.v1 import some_router
-# app.include_router(some_router.router, prefix="/api/v1/some", tags=["some"])
+app.include_router(meet.router, prefix="/api/v1", tags=["meet"])
