@@ -1,5 +1,8 @@
 # DClaw Meet — Strategic Product Plan v1.2
 
+> 📘 **REVISED PRD v2.3 available:** See `REVISED-PRD.md` for complete gap analysis, current state, and full feature roadmap.
+
+
 > YC-Grade Gap Analysis & Autonomous Development Roadmap  
 > Generated: 2026-05-16  
 > Based on: `AGENTS.md` architecture audit, scaffold state analysis, YC standards
